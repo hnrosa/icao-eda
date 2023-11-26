@@ -10,6 +10,7 @@ Created on Thu Nov 23 13:40:32 2023
 import mysql.connector 
 from mysql.connector import Error
 import csv
+from creds import PASSWORD
 
 
 def create_server_connection(host_name, user_name, user_password):
@@ -60,11 +61,9 @@ def execute_query(connection, query, values = None):
     except Error as err:
         print(f"Error: '{err}'")
         
-pw = 'branco2@'
-
 # %%
 
-server_connection = create_server_connection('localhost', 'root', pw)
+server_connection = create_server_connection('localhost', 'root', PASSWORD)
 
 # %%
 
@@ -72,7 +71,7 @@ create_database(server_connection, 'CREATE DATABASE icao')
 
 # %%
 
-db = create_db('localhost', 'root', pw, 'icao')
+db = create_db('localhost', 'root', PASSWORD, 'icao')
 
 
 # %%
