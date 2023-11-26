@@ -11,6 +11,7 @@ import mysql.connector
 from mysql.connector import Error
 import pandas as pd
 import warnings
+from creds import PASSWORD
 warnings.filterwarnings('ignore')
 
 def create_db_connection(host_name, user_name, user_password, db_name):
@@ -29,9 +30,7 @@ def create_db_connection(host_name, user_name, user_password, db_name):
 
     return connection
 
-pw = 'branco2@'
-
-db = create_db_connection('localhost', 'root', pw, 'icao')
+db = create_db_connection('localhost', 'root', PASSWORD, 'icao')
 
 # %%
 
